@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6deb7ee3-ecc9-4331-b6e9-a039b7bce743" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JupyterTrust" id="5d5ca8c3-e026-46a3-9957-bf75dea4e098" />
+  <component name="ProjectId" id="1ihLRF6coJQ9TSLzPVIAHZmH3mF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.RegExp" />
+  </component>
+  <component name="RunManager" selected="Python.bot">
+    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYDEVD_USE_CYTHON" value="NO" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="HomeWorkBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.bot" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.bot" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6deb7ee3-ecc9-4331-b6e9-a039b7bce743" name="Default Changelist" comment="" />
+      <created>1602354866778</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602354866778</updated>
+      <workItem from="1602354882686" duration="6134000" />
+      <workItem from="1602410256749" duration="28165000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602452119472">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1602452119472" />
+    <state x="430" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602359716399">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="430" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.732@0.0.1366.732" timestamp="1602359716399" />
+    <state x="460" y="140" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1602416287749">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="460" y="140" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1366.732@0.0.1366.732" timestamp="1602416287749" />
+    <state x="272" y="210" key="#xdebugger.evaluate" timestamp="1602449876381">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="272" y="210" key="#xdebugger.evaluate/0.0.1366.732@0.0.1366.732" timestamp="1602449876381" />
+    <state width="1320" height="250" key="GridCell.Tab.0.bottom" timestamp="1602452154826">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="250" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1602452154826" />
+    <state width="1320" height="250" key="GridCell.Tab.0.center" timestamp="1602452154825">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="250" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1602452154825" />
+    <state width="1320" height="250" key="GridCell.Tab.0.left" timestamp="1602452154824">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="250" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1602452154824" />
+    <state width="1320" height="250" key="GridCell.Tab.0.right" timestamp="1602452154825">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="250" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1602452154825" />
+    <state width="1320" height="145" key="GridCell.Tab.1.bottom" timestamp="1602449979695">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="145" key="GridCell.Tab.1.bottom/0.0.1366.732@0.0.1366.732" timestamp="1602449979695" />
+    <state width="1320" height="145" key="GridCell.Tab.1.center" timestamp="1602449979694">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="145" key="GridCell.Tab.1.center/0.0.1366.732@0.0.1366.732" timestamp="1602449979694" />
+    <state width="1320" height="145" key="GridCell.Tab.1.left" timestamp="1602449979694">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="145" key="GridCell.Tab.1.left/0.0.1366.732@0.0.1366.732" timestamp="1602449979694" />
+    <state width="1320" height="145" key="GridCell.Tab.1.right" timestamp="1602449979694">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="1320" height="145" key="GridCell.Tab.1.right/0.0.1366.732@0.0.1366.732" timestamp="1602449979694" />
+    <state x="505" y="303" key="ReplaceDuplicatesPrompt" timestamp="1602411263781">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="505" y="303" key="ReplaceDuplicatesPrompt/0.0.1366.732@0.0.1366.732" timestamp="1602411263781" />
+    <state x="184" y="1" key="SettingsEditor" timestamp="1602448461017">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="184" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1602448461017" />
+    <state width="683" height="366" key="XDebugger.FullValuePopup" timestamp="1602440815275">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state width="683" height="366" key="XDebugger.FullValuePopup/0.0.1366.732@0.0.1366.732" timestamp="1602440815275" />
+    <state x="271" y="24" key="com.intellij.database.dbimport.ImportDialog" timestamp="1602359720941">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="271" y="24" key="com.intellij.database.dbimport.ImportDialog/0.0.1366.732@0.0.1366.732" timestamp="1602359720941" />
+    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup" timestamp="1602448431410">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="346" y="52" width="672" height="678" key="search.everywhere.popup/0.0.1366.732@0.0.1366.732" timestamp="1602448431410" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HomeWorkBot$main.coverage" NAME="main Coverage Results" MODIFIED="1602357152793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HomeWorkBot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1602452121635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
