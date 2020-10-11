@@ -10,7 +10,7 @@ from consts import Filter, State
 from models import User, Task
 from utils import clear_cb
 
-TOKEN = '1338218026:AAGbE9EfKG5IkLBISCzaSJrQG3uBdu1aLzg'
+TOKEN = 'TOKEN'
 bot = telebot.TeleBot(TOKEN, threaded=False)
 
 send = bot.send_message
