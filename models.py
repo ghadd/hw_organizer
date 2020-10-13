@@ -41,19 +41,15 @@ class User(BaseModel):
 
         if not (Filter.PRIVATE in args and Filter.SHARED in args):
             if Filter.PRIVATE in args:
-                tasks = filter(lambda task: task.is_private, tasks)
+                tasks = list(filter(lambda task: task.is_private, tasks))
             elif Filter.SHARED in args:
-                tasks = filter(lambda task: not task.is_private, tasks)
-            else:
-                return []
+                tasks = list(filter(lambda task: not task.is_private, tasks))
 
         if not (Filter.DONE in args and Filter.UNDONE in args):
             if Filter.DONE in args:
-                tasks = filter(lambda task: usr.id in task.done_by, tasks)
+                tasks = list(filter(lambda task: usr.id in task.done_by, tasks))
             elif Filter.UNDONE in args:
-                tasks = filter(lambda task: usr.id not in task.done_by, tasks)
-            else:
-                return []
+                tasks = list(filter(lambda task: usr.id not in task.done_by, tasks))
 
         return sorted(tasks, key=lambda task: task.deadline)
 
@@ -74,4 +70,4 @@ class Task(BaseModel):
     content = CharField()
     is_private = BooleanField(default=True)
     deadline = DateField(null=True)
-    done_by = JSONField(null=True)
+    done_by = JSONField(default=[])

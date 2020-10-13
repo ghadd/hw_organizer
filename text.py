@@ -10,9 +10,9 @@ SHARED_TASK = 'shared_task'
 CANCEL = 'cancel'
 task_callbacks = [ADD_TASK, PRIVATE_TASK, SHARED_TASK, CANCEL]
 
-NAV_TASKS = 'navigate_tasks'
 NAV_FILTERS = 'navigate_filters'
-navigate_callbacks = [NAV_TASKS, NAV_FILTERS]
+BACK_TO_FILTERS = 'back'
+navigate_callbacks = [NAV_FILTERS, BACK_TO_FILTERS]
 
 PRIVATE_FILTER = 'private_filter'
 SHARED_FILTER = 'shared_filter'
@@ -26,3 +26,6 @@ navigate_filters = [PRIVATE_FILTER, SHARED_FILTER, DONE_FILTER, UNDONE_FILTER, A
 
 INVALID_DATE = 'Date is invalid'
 MARK_AS_DONE = 'mark_as_done'
+NO_TASKS_FOR_FILTER = 'Sorry. I didn\'t find anything matching these filters.'
+CHEER = 'Cool! Keep in up.'
+OOPS = 'Woops'

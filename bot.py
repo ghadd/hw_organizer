@@ -50,6 +50,8 @@ def create_task(msg):
 def set_task_deadline(msg):
     try:
         deadline = datetime.datetime.strptime(msg.text, '%d.%m.%Y')
+        if datetime.datetime.now() > deadline:
+            raise ValueError
         task = User.get_users_none_deadline_task(msg.from_user)
         Task.update(
             deadline=deadline
@@ -86,9 +88,8 @@ def handle_tasks(cb):
 
 @bot.callback_query_handler(func=lambda cb: cb.data in text.navigate_callbacks)
 def handle_navigate(cb):
-    if cb.data == text.NAV_FILTERS:
-        send(cb.from_user.id, 'filters', reply_markup=markups.navigate_filter)
-        clear_cb(bot, cb)
+    send(cb.from_user.id, 'filters', reply_markup=markups.navigate_filter)
+    clear_cb(bot, cb)
 
 
 @bot.callback_query_handler(func=lambda cb: cb.data in text.navigate_filters)
@@ -105,8 +106,16 @@ def handle_navigate(cb):
             cb.from_user,
             *filters
         )
-        ind = 0
-        send(cb.from_user.id, tasks[ind].content, reply_markup=markups.navigate(tasks[ind], ind))
+        if tasks:
+            ind = 0
+            send(
+                cb.from_user.id,
+                utils.get_task_stub(tasks[ind]),
+                reply_markup=markups.navigate(cb.from_user, tasks[ind], ind),
+                parse_mode='HTML'
+            )
+        else:
+            send(cb.from_user.id, text.NO_TASKS_FOR_FILTER, reply_markup=markups.back)
         clear_cb(bot, cb)
     else:
         idx = text.navigate_filters.index(cb.data)
@@ -122,7 +131,7 @@ def handle_navigate(cb):
         bot.answer_callback_query(cb.id)
 
 
-@bot.callback_query_handler(func=lambda cb: re.search(r'mark_as_done|^([+-]?[1-9]\d*|0)$', cb.data))
+@bot.callback_query_handler(func=lambda cb: re.search(r'mark_as_(un)?done-\d*|^([+-]?[1-9]\d*|0)$', cb.data))
 def nav_controls_handler(cb):
     try:
         idx = int(cb.data)
@@ -132,21 +141,43 @@ def nav_controls_handler(cb):
             bot.answer_callback_query(cb.id, "No more tasks there.")
         else:
             bot.edit_message_text(
-                tasks[idx].content,
+                utils.get_task_stub(tasks[idx]),
                 cb.from_user.id,
-                cb.message.message_id
+                cb.message.message_id,
+                parse_mode='HTML'
             )
             bot.edit_message_reply_markup(
                 cb.from_user.id,
                 cb.message.message_id,
-                reply_markup=markups.navigate(tasks[idx], idx)
+                reply_markup=markups.navigate(cb.from_user, tasks[idx], idx)
             )
             bot.answer_callback_query(cb.id)
     except ValueError:
         task_id = int(cb.data.split('-')[1])
-        task = Task.get(task_id)
-        task.done_by.append(User.get(User.uid == cb.from_user.id).id)
-        task.save()
+        mark_done = 'undone' not in cb.data
+
+        if mark_done:
+            task = Task.get(task_id)
+            task.done_by.append(User.get(User.uid == cb.from_user.id).id)
+            task.save()
+            bot.answer_callback_query(cb.id, text.CHEER)
+        else:
+            task = Task.get(task_id)
+            task.done_by.remove(User.get(User.uid == cb.from_user.id).id)
+            task.save()
+            bot.answer_callback_query(cb.id, text.OOPS)
+
+        user = User.get(User.uid == cb.from_user.id)
+        tasks = User.get_users_tasks(cb.from_user, user.current_filters)
+        if tasks:
+            bot.edit_message_reply_markup(
+                cb.from_user.id,
+                cb.message.message_id,
+                reply_markup=markups.navigate(cb.from_user, tasks[0], 0)
+            )
+        else:
+            clear_cb(bot, cb)
+            send(cb.from_user.id, text.NO_TASKS_FOR_FILTER, reply_markup=markups.back)
 
 
 if __name__ == '__main__':

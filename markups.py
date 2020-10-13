@@ -5,6 +5,7 @@ from telebot.types import ReplyKeyboardMarkup as KBrd, ReplyKeyboardRemove
 
 import text
 from consts import Filter
+from models import User
 
 menu = Brd()
 menu.row(Btn("Add task", callback_data='add_task'))
@@ -21,11 +22,14 @@ cancel = Brd()
 cancel.add(Btn("Cancel", callback_data='cancel'))
 
 
-def navigate(task, ind):
+def navigate(user, task, ind):
+    usr = User.get(User.uid == user.id)
+    addon = 'un' if usr.id in task.done_by else ''
+
     nav = Brd()
     # make gray if no way
     nav.add(Btn('Prev', callback_data=f'{ind - 1}'),
-            Btn('Mark as done', callback_data=f'mark_as_done-{task.id}'),
+            Btn(f'Mark as {addon}done', callback_data=f"mark_as_{addon}done-{task.id}"),
             Btn('Next', callback_data=f'{ind + 1}'))
     return nav
 
@@ -34,6 +38,7 @@ navigate_filter = Brd()
 navigate_filter.row(Btn('Private', callback_data='private_filter'), Btn('Shared', callback_data='shared_filter'))
 navigate_filter.row(Btn('Done', callback_data='done_filter'), Btn('Undone', callback_data='undone_filter'))
 navigate_filter.row(Btn('Apply', callback_data='apply'))
+navigate_filter.row(Btn('Back to menu', callback_data='cancel'))
 
 
 def get_date_helper():
@@ -62,12 +67,17 @@ def get_filters(inline_kb):
     filters = []
     flat = [item for sublist in inline_kb for item in sublist][:-1]
     for f in flat:
-        if f['callback_data'] == text.PRIVATE_FILTER:
+        if f['callback_data'] == text.PRIVATE_FILTER and '✅' in f['text']:
             filters.append(Filter.PRIVATE)
-        elif f['callback_data'] == text.SHARED_FILTER:
+        elif f['callback_data'] == text.SHARED_FILTER and '✅' in f['text']:
             filters.append(Filter.SHARED)
-        elif f['callback_data'] == text.DONE_FILTER:
+        elif f['callback_data'] == text.DONE_FILTER and '✅' in f['text']:
             filters.append(Filter.DONE)
-        elif f['callback_data'] == text.UNDONE_FILTER:
+        elif f['callback_data'] == text.UNDONE_FILTER and '✅' in f['text']:
             filters.append(Filter.UNDONE)
+
     return filters
+
+
+back = Brd()
+back.add(Btn('Back', callback_data='back'))
